@@ -1,0 +1,69 @@
+body {
+    .fc {
+        th {
+            background-color: $scheduleThBg;
+            font-size: $scheduleThTextSize;
+            border: $scheduleTableBorder;
+        }
+        td {
+            &.fc-head-container,
+            &.ui-widget-content {
+                border: $scheduleTableBorder;
+            }
+        }
+        .fc-toolbar {
+            .fc-center {
+                h2 {
+                    font-size: $scheduleMonthTextSize;
+                }
+            }
+        }
+        .ui-state-default {
+            border: $scheduleBtnBorder;
+            color: #009597;
+            background-color: #fff;
+            height: $scheduleBtnHeight;
+            padding: $scheduleBtnPadding;
+            width: auto;
+            text-transform: uppercase;
+            font-size: $scheduleBtnTextSize;
+            font-weight: 600;
+            &.fc-prev-button {
+                border-bottom-right-radius: 0;
+                border-top-right-radius: 0;
+            }
+            &.fc-next-button {
+                border-bottom-left-radius: 0;
+                border-top-left-radius: 0;
+            }
+        }
+        .fc-agendaDay-button,
+        .fc-agendaWeek-button,
+        .fc-month-button {
+            &.ui-state-active {
+                background: $scheduleBtnActiveBg;
+                color: $scheduleBtnActiveTextColor;
+            }
+        }
+        .fc-month-button {
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+        }
+        .fc-agendaWeek-button {
+            border-radius: 0;
+        }
+        .fc-agendaDay-button {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+        }
+    }
+    .fc-time-grid {
+        .fc-slats {
+            td {
+                height: $scheduleTimeRowHeight;
+                font-size: $scheduleTimeTextSize;
+                font-weight: 600;
+            }
+        }
+    }
+}

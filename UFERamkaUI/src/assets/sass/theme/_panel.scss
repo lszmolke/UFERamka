@@ -1,0 +1,717 @@
+body {
+  .ui-panel {
+    padding: 0;
+
+    .ui-panel-titlebar {
+      border: 0 none;
+      border-bottom: 1px solid $primaryColor;
+      padding: $headerPadding;
+      @include border-radius-top($borderRadius - 1);
+      @include border-radius-bottom(0);
+
+      .ui-panel-title {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1.5em;
+      }
+
+      .ui-panel-titlebar-icon {
+        position: relative;
+        width: 1.5em;
+        height: 1.5em;
+        color: #ffffff;
+        margin: 0;
+        @include transition(background-color .3s);
+        @include border-radius(50%);
+
+        &:hover {
+          background-color: $primaryLightColor;
+        }
+      }
+    }
+
+    .ui-panel-content {
+      height: 100%;
+      box-sizing: border-box;
+      padding: $contentPadding;
+    }
+
+    .ui-panel-footer {
+      padding: $headerPadding;
+      border: 0 none;
+      border-top: 1px solid $dividerColor;
+      margin: 0;
+    }
+  }
+
+  .ui-fieldset {
+    padding: $contentPadding;
+
+    .ui-fieldset-legend {
+      padding: $headerPadding .5em $headerPadding .125em;
+      color: $primaryColor;
+
+      .ui-fieldset-toggler {
+        padding: .5em;
+        height: 2em;
+        width: 2em;
+        background-color: $primaryColor;
+        color: #ffffff;
+        font-size: 1.5em;
+        @include border-radius(50%);
+        @include transition(background-color .3s);
+        margin-right: .5em;
+        @include content-shadow();
+
+        &:hover {
+          background-color: $primaryDarkColor;
+        }
+      }
+
+      &.ui-state-focus {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .ui-accordion {
+    .ui-accordion-header {
+      background-color: $primaryColor;
+      padding: 0;
+      color: #ffffff;
+      font-size: $headerFontSize;
+      @include transition(background-color .3s);
+
+      > a {
+        padding: $headerPadding $headerPadding $headerPadding 2.5em;
+        color: #ffffff;
+      }
+
+      &:not(.ui-state-active):not(.ui-state-disabled):hover {
+        background-color: $primaryDarkColor;
+      }
+
+      &.ui-state-active {
+        background-color: $accentColor;
+        color: $accentTextColor;
+        @include border-radius-bottom(0);
+
+        > a {
+          color: $accentTextColor;
+        }
+      }
+
+      .fa-caret-right {
+        margin-top: -.5em;
+        font-size: 1.5em;
+      }
+
+      .fa-caret-down {
+        margin-top: -.5em;
+        font-size: 1.5em;
+      }
+    }
+
+    .ui-accordion-content {
+      padding: $contentPadding;
+      line-height: $lineHeight;
+    }
+  }
+
+  .ui-toolbar {
+    background-color: $primaryDarkColor;
+    @include content-shadow();
+    padding: .625em;
+  }
+
+  .ui-tabview {
+    padding: 0;
+
+    &.main-tab-view {
+      border: 0;
+
+      &.ui-tabview-top {
+        > .ui-tabview-nav {
+          border-bottom: 0;
+        }
+      }
+
+      .ui-tabview-panels {
+        background: $white-smoke;
+      }
+    }
+
+    .ui-tabview-nav {
+      background-color: #ffffff;
+      border: 0 none;
+      @include border-radius(0);
+
+      > li {
+        padding: 0;
+        @include transition(border-color .3s);
+
+        > a {
+          padding: $headerPadding;
+
+          &:focus {
+            outline: 0 none;
+          }
+        }
+
+        > .fa-close {
+          margin: .325em 0 0;
+          @include transition(color .3s);
+          color: $textSecondaryColor;
+        }
+
+        .ui-tabview-left-icon,
+        .ui-tabview-right-icon {
+          color: $textSecondaryColor;
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        .ui-tabview-title {
+          color: $tabcolor;
+          font-size: 12px;
+          font-weight: 600;
+          line-height: 1.5em;
+          text-transform: uppercase;
+          vertical-align: middle;
+        }
+
+        &.ui-state-default {
+          a {
+            color: $textSecondaryColor;
+          }
+        }
+
+        &:not(.ui-state-active):not(.ui-state-disabled):hover {
+          background-color: #ffffff;
+        }
+
+        &.ui-state-active {
+          background-color: #ffffff;
+          border-color: $tabcolorActive;
+          border-style: solid;
+
+          a {
+            color: $primaryColor;
+          }
+
+          > .fa-close {
+            color: $accentColor;
+          }
+        }
+
+        &.ui-tabview-outline {
+          outline: 0 none;
+          border-color: $accentLightColor;
+        }
+      }
+    }
+
+    .ui-tabview-panel {
+      padding: $contentPadding;
+    }
+
+    &.ui-tabview-top {
+      > .ui-tabview-nav {
+        padding: 0;
+        margin: 0;
+        @include border-radius-top(4px);
+        border-bottom: 1px solid $dividerColor;
+
+        > li {
+          border-style: solid;
+          border-width: 0 0 3px 0;
+        }
+      }
+    }
+
+    &.ui-tabview-bottom {
+      > .ui-tabview-nav {
+        padding: 0;
+        margin: 0;
+        @include border-radius-bottom(4px);
+        border-top: 1px solid $dividerColor;
+
+        > li {
+          border-width: 2px 0 0 0;
+        }
+      }
+    }
+
+    &.ui-tabview-left {
+      > .ui-tabview-nav {
+        padding: 0;
+        margin: 0;
+        @include border-radius-left($borderRadius + 1);
+        border-right: 1px solid $dividerColor;
+
+        > li {
+          box-sizing: border-box;
+          border-width: 0 3px 0 0;
+
+          > a {
+            width: 100%;
+            box-sizing: border-box;
+          }
+        }
+      }
+    }
+
+    &.ui-tabview-right {
+      > .ui-tabview-nav {
+        padding: 0;
+        @include border-radius-right($borderRadius + 1);
+        border-left: 1px solid $dividerColor;
+
+        > li {
+          box-sizing: border-box;
+          border-width: 0 0 0 2px;
+
+          > a {
+            width: 100%;
+            box-sizing: border-box;
+          }
+
+          &.ui-state-active {
+            > a {
+              padding-left: .875em;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .simple-toggle-panel {
+    .ui-accordion-header {
+      background: transparent;
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      margin: 0;
+      min-width: auto;
+      position: relative;
+      width: 100%;
+
+      &.ui-state-active,
+      &:not(.ui-state-active):not(.ui-state-disabled):hover {
+        background-color: transparent;
+
+        > a {
+          color: $accordionSecondaryColor;
+        }
+      }
+
+      > .fa {
+        left: auto;
+        position: absolute;
+        right: 20px;
+      }
+
+      > .fa,
+      > a {
+        color: $accordionSecondaryColor;
+      }
+
+      > a {
+        border-bottom: 1px solid $listBorderColor;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 16px 20px;
+      }
+
+      > .fa-caret-down {
+        font-size: 1.8em;
+        transform: rotate(180deg);
+      }
+
+      > .fa-caret-right {
+        font-size: 1.8em;
+        transform: rotate(90deg);
+      }
+    }
+
+    .ui-widget-content {
+      border: 0;
+    }
+  }
+
+  .simple-toggle-panel-text {
+    position: relative;
+
+    .ui-accordion-header {
+      background: transparent;
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      margin: 0;
+      min-width: auto;
+      position: relative;
+      width: auto;
+
+      &:not(.ui-state-active):not(.ui-state-disabled):hover {
+        background-color: transparent;
+      }
+
+      &.ui-state-active {
+        background-color: transparent;
+        color: $accordionPrimaryColor;
+
+        > a {
+          color: $accordionPrimaryColor;
+        }
+      }
+
+      > .fa,
+      > a {
+        color: $accordionPrimaryColor;
+      }
+
+      > a {
+        padding: .5em 2em .5em 0;
+      }
+
+      > .fa {
+        left: auto;
+        position: absolute;
+        right: 0;
+      }
+
+      > .fa-caret-down {
+        transform: rotate(180deg);
+      }
+
+      > .fa-caret-right {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .simple-toggle-panel-absolute {
+    position: relative;
+
+    .ui-accordion-header {
+      background: transparent;
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      margin: 0;
+      min-width: auto;
+      position: relative;
+      width: auto;
+
+      &:not(.ui-state-active):not(.ui-state-disabled):hover {
+        background-color: transparent;
+      }
+
+      &.ui-state-active {
+        background-color: transparent;
+        color: $accordionPrimaryColor;
+
+        > a {
+          color: $accordionPrimaryColor;
+        }
+      }
+
+      > .fa,
+      > a {
+        color: $accordionPrimaryColor;
+      }
+
+      > a {
+        padding: .5em 2em .5em 0;
+      }
+
+      > .fa {
+        left: auto;
+        position: absolute;
+        right: 0;
+      }
+
+      > .fa-caret-down {
+        transform: rotate(180deg);
+      }
+
+      > .fa-caret-right {
+        transform: rotate(90deg);
+      }
+    }
+
+    .ui-accordion-content-wrapper {
+      position: absolute;
+    }
+  }
+
+  .walletBox {
+    align-items: center;
+    background: $walletBoxBg;
+    display: flex;
+    overflow: hidden;
+    padding: 10px 20px;
+
+    &-title {
+      color: $walletBoxColor;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0 0 20px;
+      text-transform: uppercase;
+    }
+
+    &-row {
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+    &-th {
+      color: $walletBoxThColor;
+      font-size: 12px;
+      font-weight: 600;
+      margin-right: 50px;
+    }
+
+    &-left-side {
+      flex: 3;
+      float: left;
+    }
+
+    &-right-side {
+      flex: 1;
+      float: right;
+      position: relative;
+
+      &::before {
+        background: $walletBoxBorderColor;
+        content: "";
+        height: calc(100% + 34px);
+        left: 0;
+        position: absolute;
+        top: -17px;
+        width: 1px;
+      }
+    }
+
+    &-inline-list {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        color: $walletBoxColor;
+        margin-right: 25px;
+        font-size: 12px;
+
+        a {
+          display: inline-block;
+          font-size: 14px;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    &-total-list {
+      list-style: none;
+      margin: 0;
+      padding: 0 0 0 25px;
+
+      li {
+        color: $walletBoxSecondaryColor;
+        font-size: 12px;
+        margin-bottom: 8px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &.bold {
+          font-weight: bold;
+        }
+
+        &.total {
+          color: $walletBoxColor;
+
+          .value {
+            color: $walletBoxColor;
+          }
+        }
+
+        .label {
+          display: inline-block;
+          vertical-align: middle;
+          width: 100px;
+        }
+
+        .value {
+          color: $walletBoxHighlight;
+        }
+      }
+    }
+
+    i {
+      vertical-align: middle;
+    }
+  }
+
+  .infoBox {
+    align-items: center;
+    background: $walletBoxBg;
+    overflow: hidden;
+    padding: 10px 20px;
+
+    &-row {
+      display: flex;
+      position: relative;
+      padding: 0 0 10px;
+
+      &::before {
+        background: $listBorderColor;
+        bottom: 0;
+        content: "";
+        height: 1px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+
+      &:last-child {
+        padding: 10px 0 0;
+
+        &::before {
+          content: normal;
+        }
+      }
+    }
+
+    &-col {
+      flex: 1;
+    }
+  }
+
+  .simpleBox {
+    background: $simpleBoxBg;
+    padding: 10px 20px;
+
+    header {
+      color: $simpleBoxHeaderColor;
+      align-items: center;
+      display: flex;
+
+      .btn-status-wrapper,
+      .h3 {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .h3 {
+        flex: 2;
+
+        .status {
+          color: $simpleBoxStatusColor;
+        }
+      }
+
+      .btn-status-wrapper {
+        flex: 1;
+        text-align: right;
+      }
+    }
+
+    p {
+      color: $simpleBoxParagrahColor;
+      font-size: 12px;
+    }
+
+    a {
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+
+  .timeToggle {
+    border: 0;
+    display: inline-block;
+    position: relative;
+    width: 240px;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        @include border-radius(3px);
+        border: 1px solid $timeToggleBorderColor;
+        color: $timeToggleColor;
+        display: inline-block;
+        padding: 0 !important;
+        vertical-align: middle;
+        margin: 0 10px 10px 0;
+
+        &:last-child {
+          margin-right: 10px;
+        }
+
+        a {
+          display: block;
+          padding: 10px 17px;
+
+          &:hover {
+            background-color: $timeToggleBorderColor;
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .ui-panel-titlebar {
+      background-color: transparent;
+      border-bottom: 0;
+      color: $timeToggleColor;
+      padding-bottom: 0;
+      position: relative;
+
+      &::after,
+      &::before {
+        content: normal;
+      }
+
+      .ui-panel-titlebar-icon {
+        @include border-radius(3px);
+        border: 1px solid $timeToggleBorderColor;
+        display: inline-block;
+        height: auto;
+        min-height: 41px;
+        padding: 8px 9px;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        width: auto;
+
+        &:hover {
+          background-color: $timeToggleBorderColor;
+
+          .fa {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .ui-panel-content {
+      padding-top: 0;
+    }
+  }
+}
+@media (max-width: 640px) {
+  body {
+    .ui-toolbar {
+      .ui-toolbar-group-right {
+        margin-top: 1em;
+      }
+    }
+  }
+}

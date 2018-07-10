@@ -1,0 +1,12 @@
+<div class="layout-wrapper" (click)="onWrapperClick()" [ngClass]="{'layout-wrapper-static': layoutStatic,'layout-wrapper-active': mobileMenuActive}">
+    <ufe-main-menu></ufe-main-menu>
+    <div class="layout-main">
+        <ufe-topbar></ufe-topbar>
+        <ufe-breadcrumb></ufe-breadcrumb> 
+        <div class="layout-content">
+            <router-outlet></router-outlet>
+        </div>
+        <ufe-footer></ufe-footer>
+        <div class="layout-main-mask" *ngIf="mobileMenuActive"></div>
+    </div>
+</div>

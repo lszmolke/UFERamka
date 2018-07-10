@@ -1,0 +1,56 @@
+<div fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="20px">
+    <div class="item item-3" fxFlex>
+        <div class="ui-g dashboard">
+            <div class="ui-g-12 ui-lg-4">
+                <div class="task-box task-box-1">
+                    <div class="task-box-header">
+                        <i class="material-icons">refresh</i>
+                    </div>
+                    <div class="task-box-content">
+                        <superscreen-customer-search (searchFinished)="showSearchResults($event)"></superscreen-customer-search>
+                    </div>
+                    <div class="task-box-footer">
+                        <span class="task-status">WAITING</span>
+                        <img src="assets/layout/images/avatar1.png">
+                        <img src="assets/layout/images/avatar2.png">
+                        <img src="assets/layout/images/avatar3.png">
+                    </div>
+                </div>
+            </div>
+            <div class="ui-g-12 ui-lg-4">
+                <div class="task-box task-box-2">
+                    <div class="task-box-header">
+                        <i class="material-icons">refresh</i>
+                    </div>
+                    <div class="task-box-content">
+                        <superscreen-customer-details></superscreen-customer-details>
+                    </div>
+                    <div class="task-box-footer">
+                        <span class="task-status">IN PROGRESS</span>
+                        <img src="assets/layout/images/avatar2.png">
+                        <img src="assets/layout/images/avatar3.png">
+                        <img src="assets/layout/images/avatar4.png">
+                    </div>
+                </div>
+            </div>
+            <div class="ui-g-12 ui-lg-4">
+                <div class="task-box task-box-3">
+                    <div class="task-box-header">
+                        <i class="material-icons">refresh</i>
+                    </div>
+                    <div class="task-box-content">
+                        <p-dropdown [options]="cities1" [(ngModel)]="selectedCity1"></p-dropdown>
+                        <p-dropdown [options]="cities1" [(ngModel)]="selectedCity1"></p-dropdown> 
+                    </div>
+              
+                    <div class="task-box-footer">
+                        <span class="task-status">ON HOLD</span>
+                        <img src="assets/layout/images/avatar1.png">
+                        <img src="assets/layout/images/avatar2.png">
+                        <img src="assets/layout/images/avatar3.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

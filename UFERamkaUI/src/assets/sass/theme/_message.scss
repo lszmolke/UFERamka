@@ -1,0 +1,275 @@
+body {
+  /* Messages */
+  .ui-messages {
+    padding: 20px 15px;
+
+    ul {
+      display: inline-block;
+      margin-left: 0;
+    }
+
+    &.ui-messages-info {
+      background-color: #fff;
+      border-color: #0066b3;
+      color: #0066b3;
+    }
+
+    &.ui-messages-warn {
+      background-color: #fdf1e6;
+      border-color: #fdf1e6;
+      color: #ec7405;
+    }
+
+    &.ui-messages-error {
+      background-color: #f6e8e9;
+      border-color: #f6e8e9;
+      color: #991f28;
+    }
+
+    &.ui-messages-fatal {
+      background-color: #212121;
+      border-color: #212121;
+      color: #ffffff;
+    }
+
+    &.ui-messages-success {
+      background-color: #e5f2f4;
+      border-color: #e5f2f4;
+      color: #007e90;
+    }
+
+    .ui-messages-close {
+      display: none;
+    }
+  }
+
+  .ui-messages-detail {
+    font-size: 14px;
+
+    a {
+      color: #009597;
+    }
+  }
+
+  .ui-messages .ui-messages-icon {
+    background: none;
+    color: #fff;
+    margin-top: -2px;
+
+    &.fa-info-circle {
+      @include material-icon("info");
+      color: #0066b3;
+      font-size: 1.75em;
+    }
+
+    &.fa-warning {
+      @include material-icon("warning");
+      color: #ec7405;
+      font-size: 1.75em;
+    }
+
+    &.fa-close {
+      @include material-icon("error");
+      color: #991f28;
+      display: inline-block;
+      font-size: 1.75em;
+      height: 21px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    &.fa-check {
+      @include material-icon("check_circle");
+      color: #007e90;
+      font-size: 1.75em;
+    }
+  }
+
+  .ui-growl {
+    top: 90px;
+
+    > .ui-growl-item-container {
+      opacity: 1;
+
+      &.ui-growl-message-info {
+        background-color: #fff;
+
+        .ui-growl-icon-close {
+          color: #0066b3;
+        }
+
+        .ui-growl-item {
+          .ui-growl-message {
+            color: #0066b3;
+
+            a {
+              color: #007d8f;
+            }
+          }
+
+          .ui-growl-image,
+          .ui-growl-image.fa-close {
+            color: #0066b3;
+          }
+        }
+      }
+
+      &.ui-growl-message-warn {
+        background-color: #fdf1e6;
+
+        .ui-growl-icon-close {
+          color: #ec7405;
+        }
+
+        .ui-growl-item {
+          .ui-growl-message {
+            color: #ec7405;
+
+            a {
+              color: #007d8f;
+            }
+          }
+
+          .ui-growl-image,
+          .ui-growl-image.fa-close {
+            color: #ec7405;
+          }
+        }
+      }
+
+      &.ui-growl-message-error {
+        background-color: #f6e8e9;
+
+        .ui-growl-icon-close {
+          color: #991f28;
+        }
+
+        .ui-growl-item {
+          .ui-growl-message {
+            color: #991f28;
+
+            a {
+              color: #007d8f;
+            }
+          }
+
+          .ui-growl-image.fa-close {
+            color: #991f28;
+          }
+        }
+      }
+
+      &.ui-growl-message-fatal {
+        background-color: #212121;
+      }
+
+      &.ui-growl-message-success {
+        background-color: #e5f2f4;
+
+        .ui-growl-icon-close {
+          color: #007e90;
+        }
+
+        .ui-growl-item {
+          .ui-growl-message {
+            color: #007e90;
+
+            a {
+              color: #007d8f;
+            }
+          }
+
+          .ui-growl-image,
+          .ui-growl-image.fa-close {
+            color: #007e90;
+          }
+        }
+      }
+
+      &.ui-shadow {
+        @include overlay-content-shadow();
+      }
+    }
+
+    .ui-growl-item {
+      .ui-growl-image {
+        background: none;
+        color: #ffffff;
+        font-size: 36px;
+
+        &.fa-info-circle {
+          @include material-icon("info");
+          font-size: 1.75em;
+        }
+
+        &.fa-exclamation-circle {
+          @include material-icon("warning");
+          font-size: 1.75em;
+        }
+
+        &.fa-close {
+          @include material-icon("error");
+          font-size: 1.75em;
+        }
+
+        &.fa-check {
+          @include material-icon("check_circle");
+          font-size: 1.75em;
+        }
+      }
+
+      .ui-growl-message {
+        color: #ffffff;
+      }
+
+      .ui-growl-icon-close {
+        @include material-icon("close");
+        font-size: 24px;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .tags-list {
+    .ui-widget-content {
+      background: transparent;
+      border: 0;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .ui-datalist-footer {
+      background: transparent;
+      border: 0;
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 0;
+      vertical-align: middle;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        @include border-radius(13px);
+        border: 1px solid $bluePrimary;
+        color: $bluePrimary;
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 600;
+        margin-right: 10px;
+        padding: 8px 12px;
+        vertical-align: middle;
+
+        .fa {
+          color: $bluePrimary;
+          font-size: 12px;
+          font-weight: 600;
+          margin-left: 10px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}

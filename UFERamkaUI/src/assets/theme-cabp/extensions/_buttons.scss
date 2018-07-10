@@ -1,0 +1,62 @@
+body{
+    .ui-radiobutton{
+        .ui-radiobutton-box.ui-state-active{
+            .ui-radiobutton-icon{
+                background-color: $radiobuttonActiveMiddleCircleBg;
+            }
+        }
+    }
+    .ui-inputswitch {
+        background: $inputSwitchOffBgColor;
+        width: map-get($inputSwitchSize, "width");
+        height: map-get($inputSwitchSize, "height");
+        padding-right: 4px;
+
+        .ui-inputswitch-handle{
+            top: 0;
+            width: map-get($inputSwitchHandlerSize, "width");
+            height: map-get($inputSwitchHandlerSize, "height");
+            margin-left: 1px;
+            top: 1px;
+        }
+    }
+
+    .ui-button.ui-state-default.ui-button-warning, .ui-buttonset.ui-button-warning > .ui-button.ui-state-default  {
+        &:enabled:focus {
+            background-color: $warningButtonHoverBgColor;
+        }
+    }
+    .ui-button.ui-state-default.ui-button-info, .ui-buttonset.ui-button-info > .ui-button.ui-state-default  {
+        &:enabled:focus {
+            background-color: $infoButtonBgColor;
+            color: $infoButtonTextColor;
+        }
+    }
+    .ui-button.ui-state-default.ui-button-danger, .ui-buttonset.ui-button-danger > .ui-button.ui-state-default  {
+        &:enabled:focus {
+            background-color: $dangerButtonHoverBgColor;
+        }
+    }
+
+    .ui-rating a {
+        color: $primaryColor;
+        margin: 0 3px;
+        &:hover {
+            color: $primaryDarkColor;
+        }
+    }
+
+    .ui-selectbutton {
+        .ui-button {
+            &.ui-state-active {
+                height: 2.6em;
+                top: -.2em;
+
+                .ui-button-text {
+                    top: .1em;
+                    position: relative;
+                }
+            }
+        }
+    }
+}

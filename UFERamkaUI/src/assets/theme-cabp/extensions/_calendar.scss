@@ -1,0 +1,72 @@
+body {
+    .ui-datepicker {
+        padding: 0;
+        width: 17.5em;
+
+        .ui-datepicker-header {
+            background: $calendarHeaderBg;
+            padding: $calendarHeaderPadding;
+            font-size: 1em;
+
+            .ui-datepicker-title {
+                color: $calendarHeaderTextColor;
+                margin: 0 2.3em;
+                line-height: 1.8em;
+                text-align: center;
+            }
+
+            .ui-datepicker-next,
+            .ui-datepicker-prev {
+                top: 50%;
+                transform: translate(0, -50%);
+                &:hover {
+                    background: #90A4AE;
+                    border-radius: 50%;
+                }
+
+                span {
+                    margin-left: 0;
+                    margin-right: 0;
+                    transform: translate(-50%, 0);
+                }
+            }
+        }
+
+        table {
+            margin: 0;
+        }
+
+        thead {
+            th {
+                background: $calendarTableThBg;
+                color: $calendarHeaderTextColor;
+                padding: $calendarHeaderThPadding;
+            }
+        }
+
+        .ui-timepicker {
+            background: $calendarTimePickerBg;
+            color: $calendarTimePickerTextColor;
+
+            a {
+                opacity: 1;
+                width: 1.2em;
+                height: 1.2em;
+                position: relative;
+
+                &:hover {
+                    background: #90A4AE;
+                    border-radius: 50%;
+                }
+
+                .fa-angle-up {
+                    margin-top: -.2em
+                }
+            }
+        }
+    }
+}
+
+body .ui-datepicker:not(.ui-state-disabled) table td:not(.ui-state-disabled) a:not(.ui-state-active):not(.ui-state-highlight):hover {
+    color: $calendarCellDateHoverTextColor;
+}

@@ -1,0 +1,299 @@
+body {
+  .schedule-toolbox {
+    align-items: flex-end;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+
+    .label-top {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .ui-dropdown {
+      margin-right: 20px;
+      width: 250px;
+    }
+  }
+
+  .schedule-legend {
+    margin: 10px 0 20px;
+
+    &-info,
+    &-status {
+      ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    &-info {
+      margin-bottom: 20px;
+
+      ul {
+        li {
+          @include border-radius(3px);
+          background: $scheduleTaskBgDefault;
+          color: $scheduleTaskColorDefault;
+          flex-basis: 0;
+          flex-grow: 1;
+          font-size: 12px;
+          height: 44px;
+          margin-right: 20px;
+          padding: 10px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          &.available {
+            background: $scheduleTaskBgAvailable;
+            border: 1px solid $scheduleTaskColorAvailable;
+            color: $scheduleTaskColorAvailable;
+          }
+
+          &.advizor {
+            background: $scheduleTaskBgAdvizor;
+            border: 1px solid $scheduleTaskBgAdvizor;
+            color: $scheduleTaskColorAdvizor;
+          }
+
+          &.place {
+            background: $scheduleTaskBgPlace;
+            border: 1px solid $scheduleTaskBgPlace;
+            color: $scheduleTaskColorPlace;
+          }
+
+          &.no-sell {
+            background: $scheduleTaskBgNoSell;
+            border: 1px solid $scheduleTaskBgNoSell;
+            color: $scheduleTaskColorNoSell;
+          }
+
+          &.sell {
+            background: $scheduleTaskBgSell;
+            border: 1px solid $scheduleTaskBgSell;
+            color: $scheduleTaskColorSell;
+          }
+        }
+      }
+    }
+
+    &-status {
+      ul {
+        li {
+          margin-right: 10px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          i {
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+
+  .fc {
+    .ui-widget-header {
+      background: $scheduleHeaderColor;
+      border: 1px solid $scheduleBorderColor;
+
+      &.fc-row {
+        border: 0;
+      }
+    }
+
+    table {
+      th {
+        background: $white;
+        border: 1px solid $scheduleBorderColor;
+        color: $scheduleTableThColor;
+        font-size: 12px;
+      }
+    }
+
+    .fc-toolbar {
+      .ui-state-default {
+        border: 1px solid $carouselBorderArrow;
+        border-radius: 3px;
+        color: $carouselHeaderColor;
+        height: 41px;
+        position: relative;
+        width: 43px;
+
+        .ui-icon {
+          display: block;
+          font-size: 25px;
+          left: 9px;
+          position: absolute;
+          top: 7px;
+        }
+
+        &.fc-prev-button {
+          border-bottom-right-radius: 0;
+          border-top-right-radius: 0;
+
+          .ui-icon-circle-triangle-w {
+            transform: none;
+
+            &::before {
+              content: "chevron_left";
+            }
+
+            &.ui-state-disabled {
+              border-right: 0;
+            }
+          }
+        }
+
+        &.fc-next-button {
+          border-bottom-left-radius: 0;
+          border-top-left-radius: 0;
+
+          .ui-icon-circle-triangle-e {
+            &::before {
+              content: "chevron_right";
+            }
+
+            &.ui-state-disabled {
+              border-left: 0;
+            }
+          }
+        }
+      }
+
+      .fc-today-button {
+        height: 41px;
+        padding: 14px 20px;
+        width: auto;
+      }
+
+      .fc-agendaDay-button,
+      .fc-agendaWeek-button,
+      .fc-month-button {
+        width: auto;
+
+        &.ui-state-active {
+          background: $scheduleHeaderActiceButton;
+          color: $scheduleHeaderColor;
+        }
+      }
+
+      .fc-month-button {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+      }
+
+      .fc-agendaWeek-button {
+        border-radius: 0;
+      }
+
+      .fc-agendaDay-button {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+      }
+    }
+
+    .ui-state-highlight {
+      background: transparent;
+    }
+  }
+
+  .fc-time-grid {
+    .fc-slats {
+      td {
+        border: 1px solid $scheduleBorderColor;
+        height: 36px;
+      }
+    }
+  }
+
+  .fc-day-grid {
+    .fc-axis {
+      color: $scheduleTableThColor;
+      font-size: 12px;
+      font-weight: 600;
+    }
+  }
+
+  .fc-time-grid {
+    .fc-time {
+      color: $scheduleTableThColor;
+      font-size: 12px;
+      font-weight: 600;
+      text-align: left;
+    }
+  }
+
+  .fc-event-container {
+    position: relative;
+
+    .fa {
+      color: #454545;
+      position: absolute;
+      right: 8px;
+      top: 3px;
+    }
+
+    .fc-time {
+      color: inherit;
+      font-weight: 400;
+    }
+
+    .fc-title {
+      font-weight: 600;
+    }
+  }
+
+  .fc-event {
+    border: 0;
+    padding: 3px 8px;
+
+    &.sell-event {
+      background: #f6e8e9;
+      color: #a8212a;
+    }
+
+    &.nosell-event {
+      background: #fdf1e6;
+      color: #ec7405;
+    }
+
+    &.consultant-event {
+      background: #e5f2f4;
+      color: #007e90;
+    }
+
+    &.meeting-event {
+      background: #e5eff7;
+      color: #0066b3;
+    }
+
+    &.task-event {
+      background: #fff;
+      border: 1px solid #0066b3;
+      color: #0066b3;
+    }
+
+    &.inaccessible-event {
+      background: #ebedef;
+      color: #3f4d5f;
+    }
+  }
+
+  .fc-resource-cell {
+    text-align: left;
+  }
+
+  .fc-resource-subline {
+    font-weight: 400;
+    margin-top: 7px;
+  }
+}

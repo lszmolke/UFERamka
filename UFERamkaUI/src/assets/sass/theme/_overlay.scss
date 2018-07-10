@@ -1,0 +1,472 @@
+body {
+  .ui-dialog {
+    @include border-radius(3px);
+    border: 0;
+    max-width: 606px;
+    width: 100% !important;
+
+    &.ui-shadow {
+      @include border-radius(3px);
+      box-shadow: 0 17px 43px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    .ui-dialog-titlebar {
+      background-color: #ffffff;
+      color: $textColor;
+      padding: 0 1em .625em;
+
+      .ui-dialog-title {
+        font-size: 1.25em;
+        letter-spacing: .005em;
+        line-height: 2em;
+        margin-top: .25em;
+
+        i {
+          vertical-align: sub;
+        }
+
+        .info-titlebar {
+          float: left;
+          font-size: 10px;
+          font-weight: 600;
+
+          > * {
+            margin-right: 20px;
+          }
+        }
+
+        .action-titlebar {
+          float: right;
+          font-size: 12px;
+          font-weight: 600;
+          margin-right: 15px;
+        }
+      }
+
+      .ui-dialog-titlebar-icon {
+        @include border-radius(50%);
+        @include transition(background-color .3s);
+        border: 0 none;
+        height: 1.5em;
+        margin-top: 0;
+        padding: 0;
+        position: absolute;
+        right: 10px;
+        text-align: center;
+        top: 6px;
+        width: 1em;
+
+        &:focus,
+        &:hover {
+          @include hover-element();
+        }
+
+        .fa {
+          color: $textSecondaryColor;
+          display: inline-block;
+        }
+
+        .fa-extlink {
+          @include icon_override('fullscreen');
+        }
+
+        .fa-newwin {
+          @include icon_override('fullscreen_exit');
+        }
+      }
+    }
+
+    .title {
+      display: flex;
+      line-height: normal;
+      padding-top: 20px;
+      width: 100%;
+
+      > * {}
+
+      .h1 {
+        font-size: 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+      }
+
+      .status {
+        color: $status;
+        font-size: 12px;
+        font-weight: 600;
+        margin-right: 20px;
+      }
+
+      .due-time {
+        color: $grey;
+        font-size: 12px;
+        font-weight: 600;
+
+        .date {
+          color: $greyish;
+        }
+
+        .day {
+          color: $priority;
+        }
+      }
+    }
+
+    .modal-container {
+      .description {
+        color: $modalParagraphColor;
+        font-size: 12px;
+        margin: 0 0 30px;
+        padding: 0 1em;
+      }
+
+      .contact {
+        display: flex;
+        margin-bottom: 20px;
+
+        > * {
+          width: 50%;
+        }
+      }
+    }
+
+    .modal-grey {
+      background: $tableThBg;
+      border-bottom: 1px solid $listBorderColor;
+      padding: 15px .5em;
+
+      .th {
+        color: $greySecondary;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .h2 {
+        color: $bluePrimary;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+
+      .tools {
+        display: flex;
+      }
+
+      .info {
+        color: $greyish;
+        font-size: 12px;
+        font-weight: 600;
+        margin-right: 35px;
+      }
+
+      .actions {
+        font-size: 14px;
+        font-weight: 600;
+
+        a {
+          margin-right: 15px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+
+        i {
+          color: $primaryColor;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .ui-dialog-buttonpane {
+      padding: 0 20px;
+
+      button {
+        float: none;
+      }
+    }
+
+    .footer-actions {
+      background: $pinkish-grey;
+      text-align: left;
+      padding: 13px 20px;
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          display: inline-block;
+          margin-right: 15px;
+        }
+      }
+
+      a {
+        color: $greyish;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      i {
+        color: $greyish;
+        font-size: 16px;
+        margin-right: 5px;
+        vertical-align: sub;
+      }
+    }
+
+    .ui-dialog-content {
+      max-height: 450px;
+      overflow: auto;
+      padding: .625em 0 0;
+    }
+
+    .ui-dialog-footer {
+      border: 0 none;
+      padding: 0;
+      text-align: left;
+
+      .ui-button {
+        // background-color: #ffffff;
+        // color: $textColor;
+        @include no-shadow();
+        width: auto;
+
+        .fa {
+          color: $textSecondaryColor;
+        }
+
+        &:hover {
+          @include hover-element();
+        }
+      }
+    }
+
+    .ui-confirm-dialog-severity {
+      margin: 0 .75em;
+    }
+  }
+
+  .ui-lightbox {
+    &.ui-shadow {
+      @include overlay-content-shadow();
+    }
+
+    .ui-lightbox-caption {
+      padding: $headerPadding;
+
+      .ui-lightbox-caption-text {
+        margin: 0;
+      }
+
+      .ui-lightbox-close {
+        @include border-radius(50%);
+        @include transition(background-color .3s);
+        padding: 0;
+        margin: 0;
+        width: 1.5em;
+        height: 1.5em;
+
+        &:hover {
+          background-color: $primaryLightColor;
+          @include border-radius(50%);
+          @include transition(background-color .3s);
+        }
+      }
+    }
+
+    .ui-lightbox-content-wrapper {
+      .ui-lightbox-nav-left,
+      .ui-lightbox-nav-right {
+        top: 40%;
+
+        .fa {
+          @include transition(color .3s);
+          font-size: 3em;
+          color: $primaryLightColor;
+        }
+      }
+    }
+  }
+
+  .ui-overlaypanel {
+    &.ui-shadow {
+      @include overlay-content-shadow();
+    }
+
+    .ui-overlaypanel-close {
+      background-color: $accentColor;
+      @include border-radius(50%);
+      @include transition(background-color .3s);
+      right: -16px;
+      top: -16px;
+      width: 2em;
+      height: 2em;
+      line-height: 2em;
+      text-align: center;
+      @include content-shadow();
+
+      span {
+        color: $accentTextColor;
+        line-height: inherit;
+      }
+
+      &:hover {
+        background-color: $accentDarkColor;
+      }
+    }
+  }
+
+  .ui-tooltip {
+    @include opacity(.9);
+
+    .ui-tooltip-text {
+      background-color: #323232;
+    }
+
+    &.ui-tooltip-top {
+      .ui-tooltip-arrow {
+        bottom: 1px;
+        border-top-color: #323232;
+      }
+    }
+
+    &.ui-tooltip-bottom {
+      .ui-tooltip-arrow {
+        top: 1px;
+        border-bottom-color: #323232;
+      }
+    }
+
+    &.ui-tooltip-left {
+      .ui-tooltip-arrow {
+        border-left-color: #323232;
+      }
+    }
+
+    &.ui-tooltip-right {
+      .ui-tooltip-arrow {
+        left: 1px;
+        border-right-color: #323232;
+      }
+    }
+  }
+
+  .overlay-box {
+    background: $overlayBgsecondary;
+    color: $white;
+    width: 293px;
+
+    .h2,
+    h2 {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0;
+      padding: 0;
+    }
+
+    i {
+      color: #fff !important;
+      margin-right: 10px;
+    }
+
+    a {
+      color: #009597;
+    }
+
+    p {
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .ui-overlaypanel-close {
+      background-color: transparent;
+      box-shadow: none;
+      right: 0;
+      top: 0;
+
+      &:hover {
+        background-color: transparent;
+      }
+
+      .fa {
+        color: #fff;
+        font-size: 14px;
+      }
+    }
+
+    .ui-overlaypanel-content {
+      padding: 20px 10px;
+    }
+
+    .overlay-box-wrapper {
+      align-items: flex-start;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .overlay-box-footer {
+      align-items: center;
+      display: flex;
+      justify-content: flex-start;
+
+      a {
+        font-size: 12px;
+        font-weight: 600;
+        margin-left: 20px;
+      }
+
+      button {
+        display: inline-block;
+        width: auto;
+      }
+    }
+  }
+
+  .tooltip-box {
+    background: $white;
+
+    &::after {
+      border: solid transparent;
+      border-color: rgba(255, 255, 255, 0);
+      border-width: 6px;
+      border-bottom-color: #fff;
+      bottom: 100%;
+      content: " ";
+      height: 0;
+      left: 30px;
+      margin-left: -6px;
+      pointer-events: none;
+      position: absolute;
+      width: 0;
+    }
+
+    .ui-overlaypanel-close {
+      background-color: transparent;
+      box-shadow: none;
+      right: 0;
+      top: 0;
+
+      &:hover {
+        background-color: transparent;
+      }
+
+      .fa {
+        color: #fff;
+        font-size: 14px;
+      }
+    }
+
+    &-footer {
+      text-align: center;
+      padding: 10px 0;
+
+      button {
+        margin: 0 auto;
+        width: auto!important;
+      }
+    }
+  }
+}

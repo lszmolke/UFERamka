@@ -1,0 +1,38 @@
+body {
+  .ui-fluid {
+        .ui-autocomplete {
+            .ui-autocomplete-dropdown.ui-button {
+                height: $buttonIconOnlyHeight;
+                width: $buttonIconOnlyWidth;
+            }
+
+            &.ui-autocomplete-multiple {
+                .ui-autocomplete-multiple-container {
+                    padding: $inputMultiplePadding;
+                }
+            }
+        }
+    }
+    .ui-multiselect{
+        .ui-multiselect-trigger{
+            .fa{
+                position: absolute;
+                margin: 0;
+                right: .5em;
+                top: 50%;
+                transform: translate(0, -50%);
+            }
+        }
+    }
+    .ui-dropdown {
+        .ui-dropdown-trigger {
+            .fa{
+                position: absolute;
+                margin: 0;
+                right: .5em;
+                top: 50%;
+                transform: translate(0, -50%);
+            }
+        }
+    }
+}

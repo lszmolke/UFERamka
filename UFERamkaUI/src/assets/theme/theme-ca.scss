@@ -1,0 +1,159 @@
+/* Colors */
+$white:                #fff;
+$white-smoke:          #f0f0f0;
+$greyish:              #454545;
+$peacockBlue:          #005b9f;
+$grey:                 #999;
+$greySecondary:        #777;
+$bluePrimary:          #009597;
+$yellow:               #fef2bc;
+
+$primaryColor:         #007d8f;
+$primaryDarkColor:     #455A64;
+$primaryLightColor:    #90A4AE;
+$primaryLightestColor: #ECEFF1;
+$primaryTextColor:     #ffffff;
+$accentColor:          #fff;
+$accentDarkColor:      #9CCC65;
+$accentLightColor:     #9CCC65;
+$accentTextColor:      #ffffff;
+$pinkish-grey:         #c8c8c8;
+$beige:                #e9e0b9;
+
+$priority:             #991f28;
+$status:               #0066b3;
+
+/* Buttons */
+$primaryBtnBg:         $white;
+$primaryBtnBorder:     $primaryColor;
+$primaryBtnText:       #007e90;
+$btnTextHover:         $white;
+$iconBtnBg:            $bluePrimary;
+$iconBtnHoverBg:       $primaryColor;
+$choiceBtnBorder:      1px solid $bluePrimary;
+$choiceBtnActiveColor: $bluePrimary;
+
+/* Default MenuItem */
+$menuitemTextColor:              $white;
+$menuitemIconTextColor:          $white;
+$menuitemIconTextColorSecondary: $bluePrimary;
+
+/* Inputs */
+$primaryInputBg:       #f0f0f0;
+$primaryInputBorder:   #c8c8c8;
+$sedondaryInputBorder: $white;
+$whiteInputBg:         $white;
+$dropdownColor:        #007d8f;
+$dropdownActiveColor:  #007d8f;
+
+$checkboxBorderColor:        $greyish;
+$checkboxBgCheckedColor:     $white;
+$checkboxFullBgCheckedColor: $priority;
+$checkboxCheckedColor:       $priority;
+
+/* Panels */
+$accordionPrimaryColor:   #007e90;
+$accordionSecondaryColor: $bluePrimary;
+
+$walletBoxBg:              $white;
+$walletBoxColor:           $greyish;
+$walletBoxSecondaryColor:  $greySecondary;
+$walletBoxThColor:         $greySecondary;
+$walletBoxBorderColor:     #e5e5e5;
+$walletBoxHighlight:       #009597;
+
+
+$simpleBoxBg:              $white;
+$simpleBoxHeaderColor:     $grey;
+$simpleBoxStatusColor:     $priority;
+$simpleBoxParagrahColor:   #4c4e51;
+
+$timeToggleColor:          $bluePrimary;
+$timeToggleBorderColor:    $bluePrimary;
+
+$placeCalendarLinkColor:     $bluePrimary;
+$placeCalendarProgressColor: #3f4d5f;
+$placeCalendarProgressBg:    #d8d8d8;
+
+/* Fonts */
+$fontHeaderColor: $bluePrimary;
+
+/* Forms */
+$checkboxSize: 21px;
+
+/* Tabs */
+$tabcolor: $greyish;
+$tabcolorActive: $bluePrimary;
+
+/* Lists */
+$listIconPrimaryColor:  #007e90;
+$accordionPrimaryColor: #007e90;
+$listBgColor:           #fff;
+$listBorderColor:       #e5e5e5;
+$listTitleColor:         #777;
+
+$list-color-type-1: #007e90;
+$list-color-type-2: #ec7405;
+$list-color-type-3: #ac3075;
+
+/* Tables */
+$tableTrBg:          $white;
+$tableThBg:          #f5f5f5;
+$tableExtraInfoFont: $grey;
+$tableTh:            $greySecondary;
+$tableTitle:         $bluePrimary;
+$tableIcon:          $bluePrimary;
+
+$tableTimePriotityColor: #991f28;
+$tableTimePriotity:      #991f28;
+
+$disabled: $grey;
+
+/* Priority colors */
+$priorityColor: #a8212a;
+
+/* Carousel */
+$carouselBg: $white;
+$carouselNameColor: $bluePrimary;
+
+$carouselPersonAvailable:    #99cc00;
+$carouselPersonIdle:         #a8212a;
+$carouselPersonInaccessible: #777;
+$carouselPageLinkActive:     $bluePrimary;
+$carouselHeaderColor:        $bluePrimary;
+$carouselBorderArrow:        $bluePrimary;
+
+$carouselItemTextColor:      #3f4d5f;
+
+/* Schedule */
+$scheduleHeaderColor:        $white;
+$scheduleHeaderActiceButton: $bluePrimary;
+$scheduleBorderColor:        #e5e5e5;
+$scheduleTableThColor:       #4c4e51;
+$scheduleIconColor:          $greyish;
+
+$scheduleTaskColorDefault:    #3f4d5f;
+$scheduleTaskBgDefault:       #ebedef;
+$scheduleTaskColorAvailable:  #0066b3;
+$scheduleTaskBgAvailable:     #fff;
+$scheduleTaskColorAdvizor:    #0066b3;
+$scheduleTaskBgAdvizor:       #e5eff7;
+$scheduleTaskColorPlace:      #007e90;
+$scheduleTaskBgPlace:         #e5f2f4;
+$scheduleTaskColorNoSell:     #ec7405;
+$scheduleTaskBgNoSell:        #fdf1e6;
+$scheduleTaskColorSell:       #a8212a;
+$scheduleTaskBgSell:          #f6e8e9;
+
+/* Overlay */
+$overlayBg:           #d8d8d8;
+$overlayBgsecondary:  $greyish;
+$modalParagraphColor: $greySecondary;
+
+/* Sidebar */
+$sidebarHeader:      $greyish;
+$sidebarSubheader:   $grey;
+$sidebarColor:       $bluePrimary;
+
+
+@import '../sass/theme/_theme';

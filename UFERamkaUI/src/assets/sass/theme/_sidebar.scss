@@ -1,0 +1,34 @@
+.ui-sidebar {
+  padding: 1.5em 1em;
+
+  &.ui-widget-content {
+    .fa-close {
+      color: $sidebarColor;
+      font-size: 16px;
+    }
+  }
+
+  h1 {
+    color: $sidebarHeader;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 5px;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    color: $sidebarSubheader;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 20px;
+  }
+
+  .ui-button {
+    margin-right: 20px;
+    width: auto;
+  }
+}
+
+.ui-sidebar-bottom {
+  height: auto;
+}
